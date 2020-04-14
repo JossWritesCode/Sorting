@@ -14,7 +14,7 @@ def selection_sort(arr):
 
 
 print(selection_sort([10, 2, 4, 7, 23, 1]),
-      "selection sort")  # result [1, 2, 4, 7, 10, 23]
+      "selection sort")
 
 
 # TO-DO:  implement the Bubble Sort function below

@@ -41,10 +41,6 @@ def stitch(arrA, arrB):
     return merged_arr
 
 
-print(stitch([2, 4, 9], [0, 1, 6]), "stitch")
-# TO-DO: implement the Merge Sort function below USING RECURSION
-
-
 def merge_sort_helper(arr1, arr2):
     if len(arr1) > 1:
         arr1 = merge_sort_helper(

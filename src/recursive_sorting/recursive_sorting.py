@@ -44,21 +44,22 @@ def stitch(arrA, arrB):
 print(stitch([2, 4, 9], [0, 1, 6]), "stitch")
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
-[2, 0, 4, 1, 9, 6]
+
+def merge_sort_helper(arr1, arr2):
+    if len(arr1) > 1:
+        arr1 = merge_sort_helper(
+            arr1[0:len(arr1) / 2], arr1[len(arr1) / 2: len(arr1)])
+
+    if len(arr2) > 1:
+        arr2 = merge_sort_helper(
+            arr2[0: len(arr2) / 2], arr1[len(arr2) / 2: len(arr2)])
+
+    return stitch(arr1, arr2)
 
 
 def merge_sort(arr):
-    array_of_arrays = []
-    for element in arr:
-        small_arr = []
-        small_arr.append(element)
-        array_of_arrays.append(small_arr)
 
-    i = 0
-
-    while i < len(arr) - 2:
-        stitch(array_of_arrays[i], array_of_arrays[i + 1])
-        i += 2
+    return merge_sort_helper(arr[0: len(arr) / 2], arr[len(arr) / 2: len(arr)])
 
 
 print(merge_sort([84, 1, 28, 38, 12]), "merge_sort")

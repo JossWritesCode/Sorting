@@ -1,5 +1,5 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
-import math
+from math import floor
 
 
 def stitch(arrA, arrB):
@@ -48,18 +48,18 @@ print(stitch([2, 4, 9], [0, 1, 6]), "stitch")
 def merge_sort_helper(arr1, arr2):
     if len(arr1) > 1:
         arr1 = merge_sort_helper(
-            arr1[0:len(arr1) / 2], arr1[len(arr1) / 2: len(arr1)])
+            arr1[0:floor(len(arr1) / 2)], arr1[floor(len(arr1) / 2): len(arr1)])
 
     if len(arr2) > 1:
         arr2 = merge_sort_helper(
-            arr2[0: len(arr2) / 2], arr1[len(arr2) / 2: len(arr2)])
+            arr2[0: floor(len(arr2) / 2)], arr2[floor(len(arr2) / 2): len(arr2)])
 
     return stitch(arr1, arr2)
 
 
 def merge_sort(arr):
 
-    return merge_sort_helper(arr[0: len(arr) / 2], arr[len(arr) / 2: len(arr)])
+    return merge_sort_helper(arr[0: floor(len(arr) / 2)], arr[floor(len(arr) / 2): len(arr)])
 
 
 print(merge_sort([84, 1, 28, 38, 12]), "merge_sort")
